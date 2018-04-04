@@ -6,8 +6,8 @@
         <% if user_signed_in? %>
           <li><h2><%="Witaj #{current_user.email}"%></h2></li>
         <% end %>
-        <li><%= link_to "Dzisiaj", day_path  %></li>
-        <li><%= link_to "Tydzień", week_path %></li>
+        <li><%= link_to "Dzisiaj", '#'  %></li>
+        <li><%= link_to "Tydzień", '#' %></li>
         <% if user_signed_in? %>
           <li><%= link_to "Wyloguj się", destroy_user_session_path, :method => :delete %></li>
         <% else %>
