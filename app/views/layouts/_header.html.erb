@@ -1,0 +1,19 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Planownik", root_path, id: "logo" %></li>
+        <% if user_signed_in? %>
+          <li><h2><%="Witaj #{current_user.email}"%></h2></li>
+        <% end %>
+        <li><%= link_to "Dzisiaj", day_path  %></li>
+        <li><%= link_to "Tydzień", week_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Wyloguj się", destroy_user_session_path, :method => :delete %></li>
+        <% else %>
+          <li><%= link_to "Zaloguj się", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
