@@ -1,0 +1,10 @@
+<%= week_calendar events: @tasks do |date, tasks| %>
+  <h3>To do:</h3>	
+    <% @tasks.where(start_time: date.all_day).to_do.each do |task| %>
+      <%= render task %>
+    <% end %>
+  <h3>Completed:</h3>
+    <% @tasks.where(start_time: date.all_day).completed.each do |task| %>
+      <%= render task %>
+    <% end %>
+<% end %>

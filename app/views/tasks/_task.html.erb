@@ -1,0 +1,16 @@
+<div>
+  <%= task.start_time.strftime("%H:%M") %>
+  <%= link_to task.name, task_path(task) %>
+  <% if !task.completed? %>
+    <span class="btn-sm">
+      <%= link_to complete_task_path(task) do %>
+        <% octicon "check" %>
+      <% end %>
+    </span>   
+    <span class="btn-sm">
+      <%= button_to task_path(task), :method => "delete", data: {confirm: "Are you sure?"} do %>
+        <% octicon "trashcan" %>
+      <% end %>
+    </span>  
+  <% end %>      
+</div>

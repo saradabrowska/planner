@@ -1,0 +1,27 @@
+<%= simple_form_for @task do |f| %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :task_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time, id: :task_start_time, default: params[:start_date].to_datetime %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description, id: :description%>
+  </div>
+
+  <div class="field">
+    <%= f.label :color%>
+    <%= f.input :color, as: :minicolors, input_html: {data: {
+          minicolors: {theme: :bootstrap}}} %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

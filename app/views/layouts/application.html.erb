@@ -1,21 +1,22 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Planner</title>
-    <%= csrf_meta_tags %>
-
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>Planownik</title>
   </head>
   <body>
-    <div class ="container">
+    <header>
       <%= render 'layouts/header' %>
-      <%= render 'layouts/messages' %>
-      <div class ="jumbotron">
+    </header>
+    <div class="container-fluid">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
         <%= yield %>
       </div>
-      <%= render 'layouts/footer' %>
-    	</div>
     </div>
-	</body>
+  </body>
 </html>

@@ -10,34 +10,24 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require simple_calendar
+ *= require jquery.minicolors
  */
 
-@import "bootstrap-sprockets"
-@import "bootstrap"
+@import "bootstrap";
 
-.alert-error
-  background-color: #f2dede
-  border-color: #eed3d7
-  color: #b94a48
-  text-align: left
+.calendar-heading {
+  margin-bottom: 2%;
+}
 
-.alert-alert
-  background-color: #f2dede
-  border-color: #eed3d7
-  color: #b94a48
-  text-align: left
+.table-content {
+  height: 400px;
+}
+
+.simple-calendar {
+  margin-bottom: 2%;
+  height: 100%;
+}
 
 
-.alert-success
-  background-color: #dff0d8
-  border-color: #d6e9c6
-  color: #468847
-  text-align: left
 
-.alert-notice
-  background-color: #dff0d8
-  border-color: #d6e9c6
-  color: #468847
-  text-align: left
