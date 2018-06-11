@@ -1,15 +1,26 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
-    <span class="calendar-title"><%= "#{start_date.strftime("%d/%m/%Y")}" %></span>
-    <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
+    <div class="text-center">
+      <%= link_to calendar.url_for_previous_view do %>
+        <% octicon "chevron-left" %>
+      <% end %>
+      <span class="calendar-title text-center"><%= link_to "#{start_date.strftime("%d.%m.%Y")}", '#', class: "datepicker" %>
+      <%= link_to calendar.url_for_next_view do %>
+        <% octicon "chevron-right" %>
+      <% end %>
+    </div>
   </div>
 
   <table class="table table-striped">
     <thead>
       <tr>
         <% date_range.slice(0, 7).each do |day| %>
-          <th><%= t('date.abbr_day_names')[day.wday] %>
+          <th><%= t('date.day_names')[day.wday].capitalize %>
+            <span style="margin-left: 0.5em;" class="btn-sm float-right">
+              <%= link_to new_task_path(start_date: day) do %>
+                <% octicon "plus" %>
+              <% end %>
+            </span> 
           </th>
         <% end %>
       </tr>

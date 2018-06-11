@@ -1,0 +1,177 @@
+pl:
+  to_do: "Do zrobienia"
+  done: "Zrobione"
+  today: "Dzisiaj"
+  week: "Tydzień"
+  account_settings: "Ustawienia konta"
+  calendar_settings: "Ustawienia Kalendarza"
+  tag_categories: "Kategorie zadań"
+  log_out: "Wyloguj się"
+  back: "wróć"
+  new_task: "nowe zadanie"
+  new: "nowe"
+  submit: "Wyślij"
+  devise:
+    shared:
+      minimum_password_length:
+        other: "musi składać się z minimum %{count} znaków"
+    registrations:
+      signed_up: 'Witaj! Zarejestrowałeś się pomyślnie.'
+      signed_up_but_unconfirmed: 'E-mail z linkiem aktywacyjnym został wysłany na Twój adres e-mail. Sprawdź e-mail, aby dokończyć rejestrację.'
+      signed_up_but_inactive: 'Zarejestrowałeś się pomyślnie. Niemniej jednak nie zostałeś zalogowany, ponieważ Twoje konto nie zostało jeszcze aktywowane.'
+      signed_up_but_locked: 'Zarejestrowałeś się pomyślnie. Niemniej jednak nie zostałeś zalogowany, ponieważ Twoje konto zostało zablokowane.'
+      updated: 'Zaktualizowałeś swoje dane.'
+      update_needs_confirmation: 'Aby potwierdzić zmiany, musimy zweryfikować Twój nowy adres e-mail. Za chwilę wyślemy instrukcję na nowy adres.'
+      destroyed: 'Usunąłeś swoje konto.'
+    confirmations:
+      confirmed: "Twoje konto zostało aktywowane. Możesz zalogować się do serwisu."
+      send_instructions: "Za chwilę otrzymasz email z instrukcją jak aktywować konto."
+      send_paranoid_instructions: "Jeśli Twój adres email istnieje w naszej bazie, za chwilę powinieneś otrzymać instrukcję jak aktywować konto."
+    failure:
+      already_authenticated: "Jesteś aktualnie zalogowany."
+      inactive: "Twoje konto nie zostało jeszcze aktywowane."
+      invalid: "Błędny adres email lub hasło."
+      invalid_token: "Błędny token aktywacyjny."
+      locked: "Twoje konto jest zablokowane."
+      not_found_in_database: "Błędny adres email lub hasło."
+      timeout: "Sesja wygasła, zaloguj się ponownie by kontynuować."
+      unauthenticated: "Aby kontynuować musisz się zalogować."
+      unconfirmed: "Aby kontynuować musisz aktywować swoje konto."
+    mailer:
+      confirmation_instructions:
+        subject: "Instrukcja aktywacji konta"
+      reset_password_instructions:
+        subject: "Instrukcja zresetowania hasła."
+      unlock_instructions:
+        subject: "Instrukcja odblokowania konta"
+    omniauth_callbacks:
+      failure: "Logowanie przez konto %{kind} zakończyło się błędem: \"%{reason}\"."
+      success: "Zalogowałeś się pomyślnie przez konto %{kind}."
+    passwords:
+      no_token: "Dostęp do tej strony jest możliwy jedynie poprzez użycie prawidłowego adresu z emaila z instrukcjami o resecie hasłą. Jeżeli właśnie skorzystałeś z tego adresu, sprawdź czy użyty adres jest zgodny z tym w emailu."
+      send_instructions: "Za chwilę otrzymasz emaila z instrukcją jak zresetować hasło."
+      send_paranoid_instructions: "Jeżeli Twój adres istnieje w naszej bazie, otrzymasz za chwilę emaila z instrukcją zmiany hasła."
+      updated: "Twoje hasło zostało zmienione. Zostałeś pomyślnie zalogowany."
+      updated_not_active: "Twoje hasło zostało zmienione."
+    registrations:
+      destroyed: "Do widzenia! Twoje konto zostało usunięte."
+      signed_up: "Witaj! Zarejestrowałeś się pomyślnie."
+      signed_up_but_inactive: "Zarejestrowałeś się pomyślnie. Niemniej jednak nie zostałeś zalogowany, ponieważ Twoje konto nie zostało jeszcze aktywowane."
+      signed_up_but_locked: "Zarejestrowałeś się pomyślnie. Niemniej jednak nie zostałeś zalogowany, ponieważ Twoje konto zostało zablokowane."
+      signed_up_but_unconfirmed: "Wiadomość email z instrukcją aktywacji konta została przesłana na Twój adres email. Użyj linku z emaila aby aktywować konto."
+      update_needs_confirmation: "Konto zostało zaktualizowane. Niemniej jednak przed wprowadzeniem zmian musimy potwierdzić Twój nowy adres email. Za chwilę wyślemy instrukcję na nowy adres."
+      updated: "Konto zostało pomyślnie zaktualizowane."
+    sessions:
+      user:
+        signed_in: "Zostałeś zalogowany."
+        signed_out: "Zostałeś wylogowany."
+    unlocks:
+      send_instructions: "Za chwilę otrzymasz wiadomość email z instrukcją jak odblokować konto."
+      send_paranoid_instructions: "Jeżeli Twoje konto istnieje, otrzymasz wiadomość emial z instrukcją jak odblokować konto."
+      unlocked: "Twoje konto została pomyślnie odblokowane. Zaloguj się by kontynuować."
+  errors:
+    messages:
+      already_confirmed: "już został aktywowany, proszę spróbować się zalogować."
+      confirmation_period_expired: "musi zostać potwierdzony w czasie %{period}, wyślij zapytanie o nowy."
+      expired: "stracił ważność, wyślij zapytanie o nowy."
+      not_found: "nie znaleziono"
+      not_locked: "nie był zablokowany"
+      not_saved:
+        one: "%{resource} nie został zapisany z powodu błędu:"
+        other: "%{resource} nie został zapisany z powodu następujących błędów:"
+  activerecord:
+    models:
+      task: "zadanie"
+      task_category: "kategoria"
+    attributes:
+      user:
+        confirmation_token: "Link aktywacyjny"
+        data_processing_confirmation: "Zgoda na przetwarzanie danych"
+      task:
+        name: "nazwa"
+        start_time: "data"
+        description: "opis"
+      task_category:
+        color: "kolor"
+        name: "nazwa"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "wymagany"
+              invalid: "niepoprawny"
+              taken: "już znajduje się w naszej bazie"
+            password:
+              blank: "nie może być puste"
+              too_short: "musi być dłuższe"
+            password_confirmation:
+              confirmation: "niepoprawne"
+            confirmation_token:
+              invalid: "niepoprawny"
+            data_processing_confirmation:
+              accepted: "wymagana"
+  simple_form:
+    "yes": 'Tak'
+    "no": 'Nie'
+    required:
+      text: 'wymagane'
+      mark: '*'
+    error_notification:
+      default_message: "Proszę poprawić następujące błędy:"
+
+  date:
+    abbr_day_names:
+    - nie
+    - pon
+    - wto
+    - śro
+    - czw
+    - pią
+    - sob
+    abbr_month_names:
+    -
+    - sty
+    - lut
+    - mar
+    - kwi
+    - maj
+    - cze
+    - lip
+    - sie
+    - wrz
+    - paź
+    - lis
+    - gru
+    day_names:
+    - niedziela
+    - poniedziałek
+    - wtorek
+    - środa
+    - czwartek
+    - piątek
+    - sobota
+    formats:
+      default: ! '%d-%m-%Y'
+      long: "%Y-%m-%d"
+      short: ! '%d %b'
+    month_names:
+    -
+    - styczeń
+    - luty
+    - marzec
+    - kwiecień
+    - maj
+    - czerwiec
+    - lipiec
+    - sierpień
+    - wrzesień
+    - październik
+    - listopad
+    - grudzień
+    order:
+    - :day
+    - :month
+    - :year
+
+

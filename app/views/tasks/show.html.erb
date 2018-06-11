@@ -6,9 +6,19 @@
 </p>
 
 <p>
+  <strong>Category:</strong>
+  <%= @task.task_category.name %>
+</p>
+
+<p>
   <strong>Start time:</strong>
   <%= @task.start_time %>
 </p>
 
+<p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Back', week_path(start_date: @task.start_time.to_date.to_s) %>
