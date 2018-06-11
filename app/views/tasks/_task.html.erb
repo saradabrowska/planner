@@ -1,16 +1,22 @@
-<div>
-  <%= task.start_time.strftime("%H:%M") %>
-  <%= link_to task.name, task_path(task) %>
-  <% if !task.completed? %>
-    <span class="btn-sm">
+<% if !task.completed? %>
+  <div class="task", style="border-color: <%= task.task_category.present? ? "#{task.task_category.color}" : "black" %>;">
+    <%= task.start_time.strftime("%H:%M") %>
+    <span  id="task_actions">
       <%= link_to complete_task_path(task) do %>
         <% octicon "check" %>
+      <% end %>  
+      <%= link_to task_path(task), :method => "delete", data: {confirm: "Are you sure?"} do %>
+        <% octicon "x" %>
       <% end %>
-    </span>   
-    <span class="btn-sm">
-      <%= button_to task_path(task), :method => "delete", data: {confirm: "Are you sure?"} do %>
-        <% octicon "trashcan" %>
-      <% end %>
-    </span>  
-  <% end %>      
-</div>
+    </span>
+    <%= link_to task.name, task_path(task) %>   
+  </div> 
+<% else %>
+  <ul>
+    <li class="bullet" style="color: <%= task.task_category.present? ? "#{task.task_category.color}" : "black" %>;">
+      <div class="task-completed">
+        <%= link_to task.name, task_path(task) %>
+      </div> 
+    </li>
+  </ul>
+<% end %>  

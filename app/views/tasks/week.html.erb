@@ -1,10 +1,14 @@
 <%= week_calendar events: @tasks do |date, tasks| %>
-  <h3>To do:</h3>	
-    <% @tasks.where(start_time: date.all_day).to_do.each do |task| %>
-      <%= render task %>
-    <% end %>
-  <h3>Completed:</h3>
-    <% @tasks.where(start_time: date.all_day).completed.each do |task| %>
-      <%= render task %>
-    <% end %>
+  <div class="to_do_tasks">
+    <h3><%= t('to_do') %></h3>	
+      <% @tasks.where(start_time: date.all_day).to_do.each do |task| %>
+        <%= render task %>
+      <% end %>
+  </div>
+  <div class="week-completed-task">
+    <h3><%= t('done') %></h3> 
+      <% @tasks.where(start_time: date.all_day).completed.each do |task| %>
+        <%= render task %>
+      <% end %>
+  </div>
 <% end %>

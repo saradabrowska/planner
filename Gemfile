@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'pry'
 gem 'devise'
+gem 'devise-i18n'
 gem 'simple_form'
 gem "simple_calendar", "~> 2.0"
 gem 'octicons'
@@ -47,6 +48,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'bootstrap-datepicker-rails'
 end
 
 group :development do

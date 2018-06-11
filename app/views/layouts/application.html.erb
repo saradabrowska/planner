@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tag %> 
     <title>Planownik</title>
   </head>
   <body>
@@ -12,11 +13,27 @@
       <%= render 'layouts/header' %>
     </header>
     <div class="container-fluid">
-      <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-      <% end %>
-        <%= yield %>
+      <%- flash.each do |name, msg| -%>
+        <div class="alert alert-primary">
+          <%= content_tag :div, msg, id: "flash_#{name}" %>
+        </div>
+      <%- end -%>
+      <%= yield %>
       </div>
     </div>
   </body>
+    <script>
+
+    let button = document.querySelector("a.datepicker");
+    button.onclick = function() {
+      $(button).datepicker({
+        changeMonth : true,
+        changeYear : true,
+            }).on('changeDate', function (date, instance) {
+              
+        let param = "?start_date=" + date.date.toLocaleDateString().replace(/\./g, '-')
+        location.replace(param);
+});
+    }
+  </script>
 </html>

@@ -1,0 +1,24 @@
+</br>
+<%= simple_form_for @task_category do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+	  <div class="field">
+	    <%= f.input :name, id: :task_name %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.input :color, as: :minicolors, input_html: {data: {
+	          minicolors: {theme: :bootstrap}}}, required: true %>
+	  </div>
+
+	  <div class="field>">
+	  	<%= f.input :user_id, as: :hidden, input_html: { value: "#{current_user.id}" }%>
+	  </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn-main", value: t('submit')  %>
+  </div>
+<% end %>

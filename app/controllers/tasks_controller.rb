@@ -13,7 +13,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
-    @task = Task.new
+    @task = session[:form_input].present? ? Task.new(session.delete(:form_input)) : Task.new
   end
 
   # GET /tasks/1/edit
@@ -24,9 +24,11 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
+    @task.user = current_user
+
     respond_to do |format|
       if @task.save
-        format.html { redirect_to week_path(start_date: params[:task][:start_date]), notice: 'Task was successfully created.' }
+        format.html { redirect_to week_path(start_date: start_date), notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
@@ -100,6 +102,11 @@ class TasksController < ApplicationController
     end
   end
 
+  def keep_form_input
+    session[:form_input] = params[:task]
+    redirect_to new_task_category_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
@@ -108,6 +115,10 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :start_time, :color, :description)
+      params.require(:task).permit(:name, :start_time, :color, :description, :task_category_id)
+    end
+
+    def start_date
+      Date.strptime("#{params[:task]['start_time(1i)']}-#{params[:task]['start_time(2i)']}-#{params[:task]['start_time(3i)']}").to_s
     end
 end

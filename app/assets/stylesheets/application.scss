@@ -12,12 +12,18 @@
  *
  *= require simple_calendar
  *= require jquery.minicolors
+ *= require bootstrap-datepicker
  */
 
 @import "bootstrap";
 
+body {
+  background-color: #fcfcfc;
+}
+
 .calendar-heading {
-  margin-bottom: 2%;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .table-content {
@@ -26,8 +32,172 @@
 
 .simple-calendar {
   margin-bottom: 2%;
-  height: 100%;
 }
 
+.navbar { 
+  margin-bottom: 2%;
+  background-color:  #dd4e33;
+}
 
+#nav-today {
+  color: white;
+}
 
+.simple-calendar .today {
+  background-color: #ADD5D7;
+  
+}
+.simple-calendar table {
+  border: hidden;
+}
+
+.simple-calendar table thead {
+  border: hidden;
+}
+
+a, a:hover {
+  color: black;
+}
+
+.add-task a {
+  margin-left: 0.5em;
+  color: #dd4e33;
+}
+
+.task {
+  border-style: solid;
+  border-width: 2px;
+  background-color: #fcfcfc;
+  padding: 0.75em;
+  margin: 1em 0.1em 1em 0.1em;
+  max-width: 10em;
+  overflow: auto;
+}
+
+#task_actions {
+  float: right;
+}
+
+.to_do_tasks {
+  height: 20em;
+  overflow: auto;
+}
+
+.completed_tasks {
+  height: 5em;
+  overflow: scroll;
+}
+
+.btn-main { 
+  color: white; 
+  background-color: #DD4E33; 
+  border-color: white; 
+} 
+ 
+.btn-main:hover, 
+.btn-main:focus, 
+.btn-main:active, 
+.btn-main.active, 
+.open .dropdown-toggle.btn { 
+  color: white; 
+  background-color: #ADD5D7; 
+  border-color: white 
+} 
+ 
+.btn-main:active, 
+.btn-main.active, 
+.open .dropdown-toggle.btn { 
+  background-image: none; 
+} 
+ 
+.btn-main.disabled, 
+.btn-main[disabled], 
+fieldset[disabled] .btn, 
+.btn-main.disabled:hover, 
+.btn-main[disabled]:hover, 
+fieldset[disabled] .btn:hover, 
+.btn-main.disabled:focus, 
+.btn-main[disabled]:focus, 
+fieldset[disabled] .btn:focus, 
+.btn-main.disabled:active, 
+.btn-main[disabled]:active, 
+fieldset[disabled] .btn:active, 
+.btn-main.disabled.active, 
+.btn-main[disabled].active, 
+fieldset[disabled] .btn.active { 
+  background-color: #DD4E33; 
+  border-color: #ADD5D7; 
+} 
+ 
+.btn-main .badge { 
+  color: #DD4E33; 
+  background-color: #ffffff; 
+}
+
+.btn-reverse { 
+  color: #ffffff; 
+  background-color: #ADD5D7; 
+  border-color: #FCFCFC; 
+} 
+ 
+.btn-reverse:hover, 
+.btn-reverse:focus, 
+.btn-reverse:active, 
+.btn-reverse.active, 
+.open .dropdown-toggle.btn-reverse { 
+  color: #ffffff; 
+  background-color: #DD4E33; 
+  border-color: #FCFCFC; 
+} 
+ 
+.btn-reverse:active, 
+.btn-reverse.active, 
+.open .dropdown-toggle.btn-reverse { 
+  background-image: none; 
+} 
+ 
+.btn-reverse.disabled, 
+.btn-reverse[disabled], 
+fieldset[disabled] .btn-reverse, 
+.btn-reverse.disabled:hover, 
+.btn-reverse[disabled]:hover, 
+fieldset[disabled] .btn-reverse:hover, 
+.btn-reverse.disabled:focus, 
+.btn-reverse[disabled]:focus, 
+fieldset[disabled] .btn-reverse:focus, 
+.btn-reverse.disabled:active, 
+.btn-reverse[disabled]:active, 
+fieldset[disabled] .btn-reverse:active, 
+.btn-reverse.disabled.active, 
+.btn-reverse[disabled].active, 
+fieldset[disabled] .btn-reverse.active { 
+  background-color: #ADD5D7; 
+  border-color: #FCFCFC; 
+} 
+ 
+.btn-reverse .badge { 
+  color: #ADD5D7; 
+  background-color: #ffffff; 
+}
+
+.index {
+  margin-top: 10%;
+}
+
+.task-completed {
+  margin-bottom: -0.5em;
+  max-width: 10em;
+  overflow: auto;
+}
+
+.bullet { 
+  margin-left: -1.5em;
+}
+
+h3 { 
+  font-size: 1.5em;
+}
+
+.user-form {
+  max-width: 30em;
+}
