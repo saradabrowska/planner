@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require jquery.minicolors
 //= require jquery.minicolors.simple_form
+//= require bootstrap-datepicker
 //= require_tree .

@@ -1,27 +1,22 @@
+</br>
 <%= simple_form_for @task do |f| %>
-
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, id: :task_name %>
+    <%= f.input :name %>
   </div>
 
   <div class="field">
-    <%= f.label :start_time %>
-    <%= f.datetime_select :start_time, id: :task_start_time, default: params[:start_date].to_datetime %>
+    <%= f.input :start_time, selected: start_time.to_datetime %>
   </div>
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description, id: :description%>
+    <%= f.input :description, :as => :text, :input_html => { :rows => 5 , :style => 'width: 100%'} %>
   </div>
 
   <div class="field">
-    <%= f.label :color%>
-    <%= f.input :color, as: :minicolors, input_html: {data: {
-          minicolors: {theme: :bootstrap}}} %>
+    <span id="link-new-tag-cat">
+    <%= f.association :task_category, label: ("kategoria <span class='btn btn-sm'><input name=\"commit\" value=\"nowa kategoria\" formaction=\"/form-input\" data-disable-with=\"new task category\" type=\"submit\"></span>").html_safe, collection: current_user.task_categories, required: false %>
   </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn-main", value: t('submit') %>
   </div>
 <% end %>
