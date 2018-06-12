@@ -7,7 +7,7 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @task.task_category.name %>
+  <%= @task.task_category.try(:name) %>
 </p>
 
 <p>

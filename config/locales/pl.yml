@@ -1,4 +1,5 @@
 pl:
+  success: "Akcja powiodła się"
   to_do: "Do zrobienia"
   done: "Zrobione"
   today: "Dzisiaj"
@@ -111,6 +112,11 @@ pl:
               invalid: "niepoprawny"
             data_processing_confirmation:
               accepted: "wymagana"
+        task_category:
+          attributes:
+            name:
+              taken: "już istnieje"
+              too_long: "musi być krótsza"
   simple_form:
     "yes": 'Tak'
     "no": 'Nie'

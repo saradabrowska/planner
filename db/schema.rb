@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180604144044) do
+ActiveRecord::Schema.define(version: 20180611092626) do
 
   create_table "task_categories", force: :cascade do |t|
     t.string "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180604144044) do
     t.string "description"
     t.integer "task_category_id"
     t.integer "user_id"
+    t.boolean "archived", default: false
     t.index ["task_category_id"], name: "index_tasks_on_task_category_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end

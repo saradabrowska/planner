@@ -1,0 +1,14 @@
+<h2><%= "Witaj #{@user.email}!" %></h2>
+
+<h1><%= "Planownik. Podsumowanie miesiąca: #{@last_month.upcase} #{@year}" %></h1>
+
+<h2><%= "Zrealizowane zadania: #{@tasks.completed.count}" %></h2>
+<%= render "tasks", tasks: @tasks.completed %>
+
+<h2><%= "Niezrealizowane zadania: #{@tasks.to_do.count}" %></h2>
+<%= render "tasks", tasks: @tasks.to_do %>
+  
+<p><%= "#{(Date.today.beginning_of_month + 7.days).strftime("%d.%m.%Y")} zadania zostaną usuniete z bazy danych. Aby zarchiwizować zadanie kliknij w link 'archwizuj' znajdujący się obok nazwy zadania." %>
+</p>
+
+

@@ -1,4 +1,5 @@
 class TaskCategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_task_category, only: [:show, :edit, :update, :destroy]
 
   # GET /task_categories
@@ -30,7 +31,7 @@ class TaskCategoriesController < ApplicationController
     respond_to do |format|
       binding.pry
       if @task_category.save
-        format.html { redirect_to session.delete(:return_to), notice: 'Task category was successfully created.' }
+        format.html { redirect_to session.delete(:return_to), notice:  t('success') }
         format.json { render :show, status: :created, location: @task_category }
       else
         format.html { render :new }
