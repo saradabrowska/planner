@@ -26,8 +26,8 @@
 /node_modules
 yarn-debug.log*
 .yarn-integrity
-config/secrets.yml
-config/application.yml
 
 # Ignore application configuration
 /config/application.yml
+/config/secrets.yml
+

@@ -19,7 +19,7 @@
             <%= current_user.email %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#"><%= t('account_settings') %></a>
+            <%= link_to t('account_settings'), edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to t('tag_categories'), task_categories_path, class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to t('log_out'), destroy_user_session_path, method: :delete, class: "dropdown-item" %>
