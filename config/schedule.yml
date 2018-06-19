@@ -1,0 +1,9 @@
+run_archive_notificator:
+  cron: "*/5 * * * *"
+  class: "ArchiveNotificator"
+  queue: default
+run_archiver:
+  cron: "*/15 * * * *"
+  class: "Archiver"
+  queue: default
+

@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   #devise_for :users
   devise_for :users, controllers: { registrations: "user/registrations" }
   
+  require 'sidekiq/web'
+  require 'sidekiq/cron/web'
+  mount Sidekiq::Web => '/sidekiq'
+  
   unauthenticated :user do
     root to: "pages#index"
   end
@@ -13,6 +17,7 @@ Rails.application.routes.draw do
   resources :tasks do
     member do
       get 'complete'
+      get 'archive'
     end
   end
 
