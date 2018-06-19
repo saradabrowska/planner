@@ -9,4 +9,6 @@ class Task < ApplicationRecord
 
   scope :completed, -> { where(completed: true) }
   scope :to_do, -> { where(completed: false) }
+
+  scope :from_last_month , -> { where(start_time: 1.month.ago.beginning_of_month..1.month.ago.end_of_month) }
 end

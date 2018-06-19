@@ -1,4 +1,5 @@
 class TaskCategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_task_category, only: [:show, :edit, :update, :destroy]
 
   # GET /task_categories

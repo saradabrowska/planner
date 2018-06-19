@@ -1,0 +1,17 @@
+<% task_categories(tasks).compact.each do |task_category| %>
+  <h3><%= "#{task_category.name}:" %></h3>
+  <ol>
+    <% tasks.where(task_category: task_category).each do |task| %>
+      <li><%= "#{task.start_time} #{task.name}" %> <%= link_to "archiwizuj", archive_task_url(task) %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<% if task_categories(tasks).include?(nil) %>
+  <h3>Zadania bez przypisanej kategorii:</h3>
+  <ol>
+    <% tasks.where(task_category: nil).each do |task| %>
+      <li><%= "#{task.start_time} #{task.name}" %> <%= link_to "archiwizuj", archive_task_url(task) %></li>
+    <% end %>
+  </ol>
+<% end %>

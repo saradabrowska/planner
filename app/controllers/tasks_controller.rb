@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy, :complete]
+  before_action :authenticate_user!
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :complete, :archive]
 
   # GET /tasks
   # GET /tasks.json
@@ -105,6 +106,17 @@ class TasksController < ApplicationController
   def keep_form_input
     session[:form_input] = params[:task]
     redirect_to new_task_category_path
+  end
+
+  def archive
+    @task.archived = true
+
+    if @task.save!
+      flash[:notice] = "Archived!"
+    else
+      flash[:alert] = "Ups! Something went wrong."
+    end
+    redirect_to root_path
   end
 
   private
