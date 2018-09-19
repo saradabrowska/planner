@@ -5,7 +5,7 @@
         <% octicon "chevron-left" %>
       <% end %>
       <% if calendar.number_of_weeks == 1 %>
-        <span class="calendar-title text-center"><%= link_to "#{start_date.strftime("%d.%m.%Y")} - #{(start_date + 6.days).strftime("%d.%m.%Y")}", '#', class: "datepicker" %>
+        <span class="calendar-title text-center"><%= link_to "#{first_day_of_week(@week_range)} - #{last_day_of_week(@week_range)}", '#', class: "datepicker" %>
       <%else%>
         <span class="calendar-title">Week <%= calendar.week_number %> - <%= calendar.end_week %></span>
       <%end%>

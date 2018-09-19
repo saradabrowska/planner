@@ -4,7 +4,7 @@
     <%= f.input :name %>
   </div>
 
-  <div class="field">
+  <div class="field starttime">
     <%= f.input :start_time, selected: start_time.to_datetime %>
   </div>
 
@@ -14,9 +14,9 @@
 
   <div class="field">
     <span id="link-new-tag-cat">
-    <%= f.association :task_category, label: ("kategoria <span class='btn btn-sm'><input name=\"commit\" value=\"nowa kategoria\" formaction=\"/form-input\" data-disable-with=\"new task category\" type=\"submit\"></span>").html_safe, collection: current_user.task_categories, required: false %>
+    <%= f.association :task_category, label: ("kategoria <span class='btn btn-sm'><input name=\"commit\" value=\"nowa kategoria\" formaction=\"#{form_input_path}\" data-disable-with=\"new task category\" type=\"submit\"></span>").html_safe, collection: current_user.task_categories, required: false %>
   </div>
   <div class="form-actions">
-    <%= f.button :submit, class: "btn-main", value: t('submit') %>
+    <%= f.submit t('submit'), class: "btn btn-main" %>
   </div>
 <% end %>

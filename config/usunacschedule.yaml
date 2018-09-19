@@ -1,8 +1,0 @@
-run_archive_notificator:
-  cron: "0 7 1 * *"
-  class: "ArchiveNotificator"
-  queue: default
-run_archiver:
-  cron: "0 7 8 * *"
-  class: "Archiver"
-  queue: default

@@ -5,7 +5,7 @@
       <%= link_to complete_task_path(task) do %>
         <% octicon "check" %>
       <% end %>  
-      <%= link_to task_path(task), :method => "delete", data: {confirm: "Are you sure?"} do %>
+      <%= link_to task_path(task), :method => "delete", data: {confirm: t('are_you_sure') } do %>
         <% octicon "x" %>
       <% end %>
     </span>

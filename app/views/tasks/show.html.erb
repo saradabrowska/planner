@@ -1,24 +1,24 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+  <strong><%= "#{t('activerecord.attributes.task.name').capitalize}:" %></strong>
   <%= @task.name %>
 </p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @task.task_category.name %>
+  <strong><%= "#{t('activerecord.models.task_category').capitalize}:" %></strong>
+  <%= @task.task_category.try(&:name) %>
 </p>
 
 <p>
-  <strong>Start time:</strong>
-  <%= @task.start_time %>
+  <strong><%= "#{t('activerecord.attributes.task.start_time').capitalize}:" %></strong>
+  <%= @task.start_time.strftime("%d.%m.%Y %H:%M") %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%= "#{t('activerecord.attributes.task.description').capitalize}:" %></strong>
   <%= @task.description %>
 </p>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', week_path(start_date: @task.start_time.to_date.to_s) %>
+<%= link_to t('edit'), edit_task_path(@task) %> |
+<%= link_to t('destroy'), task_path, :method => "delete", data: {confirm: t('are_you_sure') } %>
+</br></br>
+<%= link_to t('back'), week_path(start_date: @task.start_time.to_date.to_s) %>

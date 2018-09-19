@@ -1,14 +1,15 @@
-<div class="col-sm-6 col-sm offset-3">
+<div class="row justify-content-center ttoday">
 	<%= calendar number_of_days: 1, events: @tasks do |date, tasks| %>
 	   <h3><%= t('to_do') %></h3> 
 	    <% @tasks.where(start_time: date.all_day).to_do.each do |task| %>
-	    <div class="d-flex justify-content-center">
+	    <div>
 	    	<%= render task %>
 	  	</div>
 	    <% end %>
-	  <h3><%= t('done') %></h3> 
+	  <h3><%= t('done') %></h3>
+	  </br>
 	    <% @tasks.where(start_time: date.all_day).completed.each do |task| %>
-	    	<div class="d-flex justify-content-center">
+	    	<div>
 	      		<%= render task %>
 	      	</div>
 	    <% end %>

@@ -21,6 +21,13 @@ body {
   background-color: #fcfcfc;
 }
 
+@media only screen and (max-width: 500px) {
+
+    .to_do_tasks {
+        width: 15em;
+    }
+}
+
 .calendar-heading {
   margin-top: 1%;
   margin-bottom: 1%;
@@ -45,6 +52,7 @@ body {
 
 .simple-calendar .today {
   background-color: #ADD5D7;
+  width: 30em;
   
 }
 .simple-calendar table {
@@ -70,7 +78,6 @@ a, a:hover {
   background-color: #fcfcfc;
   padding: 0.75em;
   margin: 1em 0.1em 1em 0.1em;
-  max-width: 10em;
   overflow: auto;
 }
 
@@ -78,6 +85,9 @@ a, a:hover {
   float: right;
 }
 
+.ttoday #task_actions a {
+  margin-left: 2em;
+}
 .to_do_tasks {
   height: 20em;
   overflow: auto;
@@ -201,3 +211,29 @@ h3 {
 .user-form {
   max-width: 30em;
 }
+
+
+.categories {
+  padding-right: 2em;
+  padding-top: 2em;
+}
+
+.cat_el {
+  padding-right: 2em;
+  padding-left: 2em;
+}
+
+.week {
+  max-width: 100%;
+}
+
+.ttoday {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.categories {
+  margin-left: 50em;
+}
+
+

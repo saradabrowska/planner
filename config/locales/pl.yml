@@ -9,9 +9,22 @@ pl:
   tag_categories: "Kategorie zadań"
   log_out: "Wyloguj się"
   back: "wróć"
+  edit: "edytuj"
+  destroy: "usuń"
   new_task: "nowe zadanie"
+  edit_task: "Edytuj zadanie"
+  new_task_category: "Nowa kategoria"
+  edit_task_category: "Edytuj kategorię"
   new: "nowe"
   submit: "Wyślij"
+  are_you_sure: "Jesteś pewny?"
+  created: "Utworzono nowy zasób"
+  updated: "Edytowano zasób"
+  destroyed: "Usunieto zasób"
+  completed: "Brawo! Zadanie wykonane"
+  archived: "Zadanie zarchiwizowane"
+  something_went_wrong: "Działanie nie powiodło się"
+  about_path: "Info"
   devise:
     shared:
       minimum_password_length:
@@ -84,10 +97,12 @@ pl:
     models:
       task: "zadanie"
       task_category: "kategoria"
+      task_categories: "kategorie zadań"
     attributes:
       user:
         confirmation_token: "Link aktywacyjny"
         data_processing_confirmation: "Zgoda na przetwarzanie danych"
+        current_password: "hasło"      
       task:
         name: "nazwa"
         start_time: "data"
@@ -106,12 +121,25 @@ pl:
             password:
               blank: "nie może być puste"
               too_short: "musi być dłuższe"
+            current_password:
+              invalid: "niepoprawne"
             password_confirmation:
               confirmation: "niepoprawne"
             confirmation_token:
               invalid: "niepoprawny"
             data_processing_confirmation:
               accepted: "wymagana"
+        task_category:
+          attributes:
+            name:
+              taken: "już istnieje"
+        task:
+          attributes:
+            name: 
+              blank: "nie może być puste"
+              too_long: "zbyt długa, maksymalnie %{count} znaków"
+            description:
+              too_long: "zbyt długi, maksymalnie %{count} znaków"
   simple_form:
     "yes": 'Tak'
     "no": 'Nie'
